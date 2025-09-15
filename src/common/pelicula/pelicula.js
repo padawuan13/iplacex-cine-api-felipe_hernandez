@@ -4,7 +4,7 @@ export function buildPelicula(payload) {
     const nombre = String(payload?.nombre ?? "").trim();
 
     const generos = Array.isArray(payload?.generos)
-        ? payload?.genero.map((g) => String(g).trim()).filter(Boolean)
+        ? payload?.generos.map((g) => String(g).trim()).filter(Boolean)
         : [];
 
         const parsedYear = Number.parseInt(payload?.anioEstreno ?? 0, 10);
@@ -23,3 +23,4 @@ export function buildPelicula(payload) {
     }
     return doc;
 }
+
